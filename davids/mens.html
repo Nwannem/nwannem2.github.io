@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="wav.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+
+body {
+
+font-family: "Lato", sans-serif;
+transition: background-color .5s;
+}
+
+.left {
+float: left;
+
+}
+
+.name{
+font-family: Garamond, serif;
+;
+text-align: center;
+}
+
+.topright {
+  float: right;
+
+}
+
+.level {
+font-family: Garamond, serif;
+text-decoration: none;
+color: burlywood;
+}
+.icons {
+margin-top: -20px;
+
+}
+.icons i{
+font-size: 22px;
+margin: 10px;
+cursor: pointer;
+
+}
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: white;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: black;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: royalblue;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+#main {
+transition: margin-left .5s;
+padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+  .dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container1 {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container1:hover .image {
+  opacity: 0.3;
+}
+
+.container1:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: white;
+  color: burlywood;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.container {
+      margin-top: 20px;
+      width: 100%;
+      height: 100%;
+      padding-left: 50px;
+      /* background-image: url(images/blue.jpg);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center; 
+      padding: 20px 10%;
+    /* position: relative;
+    text-align: center;
+    color: white; */
+}
+
+  .footer{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
+}
+
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+  margin: 0 10px;
+}
+
+.socials a{
+  text-decoration: none;
+  color: #fff;
+  border: 1.1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.socials a i{
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color .4s ease;
+}
+
+.socials a:hover i{
+  color: aqua;
+}
+
+
+.footer-bottom{
+  background: #000;
+  width: 100vw;
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.footer-bottom p{
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom p a{
+ color:#44bae8;
+ font-size: 16px;
+ text-decoration: none;
+}
+.footer-bottom span{
+   text-transform: uppercase;
+   opacity: .4;
+   font-weight: 200;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.card {
+  margin-top: 39px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  padding: 16px;
+  max-width: 300px;
+  margin: auto;
+  font-family: arial;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+@media (max-width:500px) {
+  .footer-menu ul{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  }
+
+  
+</style>
+</head>
+<body style="color: burlywood; background-color: white;">
+    <div class="nav">
+        <div class="name"> 
+            <a href="index.html" class="level"  style="font-size: 25px;">Wavy Wrld</a>
+        </div>
+
+    <div class="topright">
+        <div class="icons">
+            <a href="#"><i class="fa fa-search" style="font-size:20px;color: burlywood;"></i></a>
+            <a href="login.html" target="_blank"><i class="fa fa-fw fa-user" style="font-size:20px;color:burlywood;"></i></a>
+            <a href="#"><i class="fa fa-shopping-cart" style="font-size:20px;color:burlywood;"></i></a>
+        </div>
+    </div>
+
+        <div class="left">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="mens.html"> Mens </a>
+                    <a href="womens.html"> Womens</a>
+                        <div class="anonr">
+                            <a href="#" style="font-size: small;">Shoes</a>
+                            <a href="#" style="font-size: small;">Boots</a>
+                            <a href="#" style="font-size: small;">Climbing</a>
+                            <div class="dropdown">
+                                <button style="font-size: small; margin-left: 18px; margin-top: -2px;" class="dropbtn" >Pages 
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div  class="dropdown-content">
+                                  <a href="about.html" style="font-size: small;">About Us</a>
+                                  <a href="contact.html" style="font-size: small;">Contact Us </a>
+                                  <a href="#" style="font-size: small;">Blog </a>
+                                  <a href="#" style="font-size: small;">Wishlist </a>
+                                  <a href="#" style="font-size: small;">CV </a>
+                                </div>
+                              </div>
+                        </div>
+                </div>
+                
+                <div id="main">
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                </div>
+
+               
+        </div>
+    </div>      
+<br>
+<br>
+<br>
+
+    <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="chee.webp" alt="Denim Jeans" style="width:100%">
+            <h1>Nike x Supreme Air Force 1 sneakers</h1>
+            <p class="price">$182</p>
+            <p>The Supreme x Nike Air Force 1 Low “Box Logo White” takes a less-is-more approach in design and is part of the “World Famous” streetwear brand’s Spring/Summer 2020 collaboration with Nike. Supreme tones down the use of aggressive branding and instead opts for a simple design, with the iconic red Box Logo </p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img src="lol.webp" alt="Denim Jeans" style="width:100%">
+            <h1>Nike Dunk Low Retro sneakers</h1>
+            <p class="price">$192</p>
+            <p>Already seen in many other colourways, the Nike Dunk Low appears now in a new colour option - with red and yellow panels. The pair features yellow leather across the base while some perforations land on the toe box. The usual Swoosh appears in a red tone on the sides while a white midsole finishes the look.</p>
+            <p><button>Add to Cart</button></p>
+
+
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img src="tra.webp" alt="Denim Jeans" style="width:100%">
+            <h1>Nike x Travis Scott SB Dunk low-top sneakers</h1>
+            <p class="price">$3,211</p>
+            <p>Supplied by a premier sneaker marketplace dealing with unworn, already sold out, in demand rarities. Each product is rigorously inspected by experienced experts guaranteeing authenticity. Invest in a timeless silhouette. Take these black, parachute beige and petra blue x Travis Scott SB Dunk low-top sneakers from Nike for example.</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <img src="per.webp" alt="Denim Jeans" style="width:100%">
+            <h1>Nike Air Force 1 Low "Skeleton" sneakers</h1>
+            <p class="price">$208</p>
+            <p>Nike's Air Force 1 Low “Skeleton” series began in 2018 when the Swoosh applied x-ray imagery of a foot onto the AF1. This new purple interaction is crafted from leather and highlited with foot bones onto the upper, insole, and even on the tongue label. Underneath, the opaque sole illuminates in the dark.</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+              <img src="yel.jpg" alt="Denim Jeans" style="width:100%">
+              <h1>Nike Nike Dunk Low "Goldenrod" sneakers</h1>
+              <p class="price">$213</p>
+              <p>Nike Dunk Low "Goldenrod" sneakers
+                First debuted in 1985, the Goldenrod colourway was originally seen in Nike's “Be True to Your School” collection. A timeless design, this iteration of the archival shoe was released on December 16th 2021.</p>
+              <p><button>Add to Cart</button></p>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              <img src="ka.webp" alt="Denim Jeans" style="width:100%">
+              <h1>Nike x KAWS x Sacai Blazer Low sneakers</h1>
+              <p class="price">$259</p>
+              <p>These Blazer Low sneakers are one of two colourways from the three-way collaboration between the Brooklyn-based artist KAWS, Chitose Abe's fashion brand Sacai and the sportswear expert Nike. Crafted from light blue leather, the low-top pair are finished with layered Swoosh logo detailing alongside the iconic 'XX' motif. </p>
+              <p><button>Add to Cart</button></p>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              <img src="re.webp" alt="Denim Jeans" style="width:100%">
+              <h1>Nike Dunk High Retro sneakers</h1>
+              <p class="price">$197</p>
+              <p>A basketball silhouette, the Nike Dunk Retro is presented in a supportive high-top design here. Contrasting white and University red tones create an effortlessly eye-catching look for the pair.</p>
+              <p><button>Add to Cart</button></p>
+            </div>
+          </div>
+
+         
+
+      </div>
+
+
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+              dropdownContent.style.display = "none";
+            } else {
+              dropdownContent.style.display = "block";
+            }
+          });
+        }
+        </script>
+    
+                <script>
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+                
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft= "0";
+                    document.body.style.backgroundColor = "white";
+                }
+                </script>
+
+
+
+
+<footer>
+
+    <div class="footer-content">
+      <h3 style="font-family: 'Trebuchet MS', sans-serif;">Wavy Wrld</h3>
+
+      <p>Shop at Wavy wrld today and let the ladies and guys trip over your new kicks ;) .</p>
+
+
+      
+     
+  </div>
+
+  <ul class="socials">
+    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+ </ul>
+
+ <div class="footer-bottom">
+  <p>copyright &copy;2021 <a href="#">David-Nwanne</a>  </p>
+
+
+</div>
+
+  </footer>
+
+
+
+
+</body>
